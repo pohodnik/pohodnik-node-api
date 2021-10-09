@@ -15,10 +15,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - uses: c-hive/gha-yarn-cache@v1
-        - run: yarn install
-        - run: |
-        NODE_ENV=production
-        yarn build
+        run: |
+          yarn install
+          NODE_ENV=production
+          yarn build
       - name: Prepare
         run: |
           echo "ARTIFACT_NAME=node_$(date +'%Y-%m-%d')-git.zip" >> $GITHUB_ENV
