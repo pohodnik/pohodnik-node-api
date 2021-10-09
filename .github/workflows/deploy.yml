@@ -27,7 +27,7 @@ jobs:
         SSH_KEY_PATH: ${{ github.workspace }}/../private.key
 
     - name: Test
-      run: ssh -o StrictHostKeyChecking=no -T  thdwdvqs@185.253.217.253
+      run: ssh -o StrictHostKeyChecking=no -T -i "${{secrets.SSH_PRIVATE_KEY}}" thdwdvqs@185.253.217.253
       shell: bash
 
     - name: Send telegramm notofication
