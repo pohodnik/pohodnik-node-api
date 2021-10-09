@@ -25,7 +25,7 @@ jobs:
         SSH_KEY_PATH: ${{ github.workspace }}/../private.key
 
     - name: Test
-      run: ssh -i ~/.ssh/private.key thdwdvqs@fednik.ru
+      run: ssh -t -i ~/.ssh/private.key thdwdvqs@fednik.ru
       shell: bash
 
     - name: Send telegramm notofication
