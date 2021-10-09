@@ -13,9 +13,11 @@ jobs:
     - name: Create SSH key
       run: |
         mkdir -p ~/.ssh/
-        echo "$SSH_PRIVATE_KEY" > ../private.key
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/private.key
         sudo chmod 600 ../private.key
         echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+        echo "$SSH_KNOWN_HOSTS" > ~/.ssh/authorized_keys
+
       shell: bash
       env:
         SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
@@ -23,7 +25,7 @@ jobs:
         SSH_KEY_PATH: ${{ github.workspace }}/../private.key
 
     - name: Test
-      run: ssh -i ${{$SSH_KEY_PATH}} thdwdvqs@fednik.ru
+      run: ssh -i ~/.ssh/private.key thdwdvqs@fednik.ru
 
     - name: Send telegramm notofication
       run: curl -s -X POST https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendMessage -d chat_id=${{ secrets.TELEGRAM_TO }} -d parse_mode=html -d text="$MESSAGE" >> /dev/null
