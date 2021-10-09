@@ -15,8 +15,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - uses: c-hive/gha-yarn-cache@v1
+      - name: Install JS dependencies
+        run: yarn install
+      - name: Build
         run: |
-          yarn install
           NODE_ENV=production
           yarn build
       - name: Prepare
