@@ -1,0 +1,30 @@
+name: Deploy node backend pohodnik.tk
+on:
+  push:
+    branches: [ main ]
+jobs:
+  deploy:
+    name: Deploy to pohodnik.tk
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2.1.0
+      with:
+        fetch-depth: 2
+    - name: multiple command
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.KEY }}
+        script: |
+          whoami
+          ls -al
+
+    - name: Send telegramm notofication
+      run: curl -s -X POST https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendMessage -d chat_id=${{ secrets.TELEGRAM_TO }} -d parse_mode=html -d text="$MESSAGE" >> /dev/null
+      env:
+          MESSAGE: |
+            ✔ Backend succesfully deployed.
+            https://pohodnik.tk
+            <i>${{ github.event.head_commit.message }}</i>
+            ${{ github.actor }}

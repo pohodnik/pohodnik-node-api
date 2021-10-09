@@ -1,0 +1,23 @@
+{
+  "name": "pohodnik-node-api",
+  "version": "1.0.0",
+  "description": "node js api version for pohodnik",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pohodnik/pohodnik-node-api.git"
+  },
+  "keywords": [
+    "nodejs",
+    "pohodnik58"
+  ],
+  "author": "pohodnik58",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pohodnik/pohodnik-node-api/issues"
+  },
+  "homepage": "https://github.com/pohodnik/pohodnik-node-api#readme"
+}
