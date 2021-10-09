@@ -22,12 +22,11 @@ jobs:
         run: curl ftp://${{env.FTP_SERVER}}/ --user ${{ secrets.FTP_USER }}:${{ secrets.FTP_PASSWORD }}
         env:
           FTP_SERVER: ftp.fednik.ru
-          FTP_USER: deploy@pohodnik.tk
 
       - name: Send to ftp
         run: curl -T ${{ env.ARTIFACT_NAME }} -u ${{ secrets.FTP_USER }}:${{ secrets.FTP_PASSWORD }} ftp://${{ env.FTP_SERVER }}/${{ env.REMOTE_FOLDER }}
         env:
-          FTP_SERVER: ftp.fednik.ru
+          FTP_SERVER: fednik.ru
           REMOTE_FOLDER: deploy/
 
       - name: Unzip remote
