@@ -19,7 +19,7 @@ jobs:
         run: zip -r ../${{ env.ARTIFACT_NAME }} *
 
       - name: Try FTP Login
-        run: curl ftp://${{env.FTP_SERVER}}/ --user ${{env.FTP_USER}}:${{ secrets.FTP_PASS }}
+        run: curl ftp://${{env.FTP_SERVER}}/ --user ${{ secrets.FTP_USER }}:${{ secrets.FTP_PASSWORD }}
         env:
           FTP_SERVER: ftp.fednik.ru
           FTP_USER: deploy@pohodnik.tk
@@ -28,7 +28,6 @@ jobs:
         run: curl -T ${{ env.ARTIFACT_NAME }} -u ${{ secrets.FTP_USER }}:${{ secrets.FTP_PASSWORD }} ftp://${{ env.FTP_SERVER }}/${{ env.REMOTE_FOLDER }}
         env:
           FTP_SERVER: ftp.fednik.ru
-          FTP_USER: deploy@pohodnik.tk
           REMOTE_FOLDER: deploy/
 
       - name: Unzip remote
