@@ -1,4 +1,4 @@
-name: Deploy node backend pohodnik.tk
+name: Deploy backend pohodnik.tk
 on:
   push:
     branches: [ main ]
@@ -7,32 +7,36 @@ jobs:
     name: Deploy to pohodnik.tk
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2.1.0
-      with:
-        fetch-depth: 2
-    - name: Create SSH key
-      run: |
-        mkdir -p ~/.ssh/
-        echo "$SSH_PRIVATE_KEY" > ~/.ssh/private.key
-        sudo chmod 600 ~/.ssh/private.key
-        echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
-        chmod 600 ~/.ssh/known_hosts
-        echo "$SSH_KNOWN_HOSTS" > ~/.ssh/authorized_keys
-        chmod 600 ~/.ssh/authorized_keys
-      shell: bash
+      - uses: actions/checkout@v2.1.0
+        with:
+          fetch-depth: 2
+      - name: Prepare
+        run: |
+          echo "ARTIFACT_NAME=node_$(date +'%Y-%m-%d')-git.zip" >> $GITHUB_ENV
+          echo $ARTIFACT_NAME
+      - name: Zipping
+        working-directory: ./src/
+        run: zip -r ../${{ env.ARTIFACT_NAME }} *
 
-      env:
-        SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
-        SSH_KNOWN_HOSTS: ${{secrets.SSH_KNOWN_HOSTS}}
-        SSH_KEY_PATH: ${{ github.workspace }}/../private.key
+      - name: Try FTP Login
+        run: curl ftp://${{env.FTP_SERVER}}/ --user ${{env.FTP_USER}}:${{ secrets.FTP_PASS }}
+        env:
+          FTP_SERVER: ftp.fednik.ru
+          FTP_USER: deploy@pohodnik.tk
 
-    - name: Test
-      run: ssh thdwdvqs@185.253.217.253
-      shell: bash
+      - name: Send to ftp
+        run: curl -T ${{ env.ARTIFACT_NAME }} -u ${{ env.FTP_USER }}:${{ secrets.FTP_PASS }} ftp://${{ env.FTP_SERVER }}/${{ env.REMOTE_FOLDER }}
+        env:
+          FTP_SERVER: ftp.fednik.ru
+          FTP_USER: deploy@pohodnik.tk
+          REMOTE_FOLDER: deploy/
 
-    - name: Send telegramm notofication
-      run: curl -s -X POST https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendMessage -d chat_id=${{ secrets.TELEGRAM_TO }} -d parse_mode=html -d text="$MESSAGE" >> /dev/null
-      env:
+      - name: Unzip remote
+        run: curl -i -X GET http://pohodnik.tk/unzip_node.php?name=${{ env.ARTIFACT_NAME }}
+
+      - name: Send telegramm notofication
+        run: curl -s -X POST https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendMessage -d chat_id=${{ secrets.TELEGRAM_TO }} -d parse_mode=html -d text="$MESSAGE" >> /dev/null
+        env:
           MESSAGE: |
             ✔ Backend succesfully deployed.
             https://pohodnik.tk
