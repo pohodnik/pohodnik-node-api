@@ -1,0 +1,8 @@
+version: '3.6'
+services:
+  pohbot:
+    build: .
+    ports:
+      - 8004:80
+    env_file:
+      - .env
