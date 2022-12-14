@@ -30,14 +30,14 @@ bot.on('message', (msg, metadata) => {
             bot.sendMessage(chatId, 'Кнопащке', {
                 reply_markup: {
                     inline_keyboard: [
-                        {
+                        [{
                             text: "Залогиниться как походник",
                             callback_data: "login",
-                        },
-                        {
+                        }],
+                        [{
                             text: "Когда поход?",
                             callback_data: "when_hike",
-                        },
+                        }],
                     ]
                 }
             });
