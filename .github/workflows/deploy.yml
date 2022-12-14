@@ -15,6 +15,7 @@ jobs:
           key: ${{ secrets.ETERNAL_KEY }}
           script: |
             cd ~/
+            rm -rf pohodnik-node-api
             git clone git@github.com:pohodnik/pohodnik-node-api.git
             cd pohodnik-node-api
             echo TELEGRAM_BOT_TOKEN=\"${{ secrets.TELEGRAM_BOT_TOKEN }}\" >> .env
