@@ -20,6 +20,7 @@ jobs:
             git clone git@github.com:pohodnik/pohodnik-node-api.git
             sudo chmod -R 755 pohodnik-node-api
             cd pohodnik-node-api
+            docker-compose down
             echo TELEGRAM_BOT_TOKEN="${{ secrets.TELEGRAM_BOT_TOKEN }}" >> .env
             docker-compose up -d
       - name: Send telegramm notofication
