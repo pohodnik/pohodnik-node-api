@@ -25,6 +25,40 @@ bot.onText(/\/echo (.+)/, (msg, match) => {
 bot.on('message', (msg, metadata) => {
     const chatId = msg.chat.id;
 
+    switch (msg.text) {
+        case '/start':
+            bot.sendMessage(chatId, 'Кнопащке', {
+                reply_markup: {
+                    inline_keyboard: [
+                        {
+                            text: "Залогиниться как походник",
+                            callback_data: "login",
+                        },
+                        {
+                            text: "Когда поход?",
+                            callback_data: "when_hike",
+                        },
+                    ]
+                }
+            });
+    }
+
     // send a message to the chat acknowledging receipt of their message
     bot.sendMessage(chatId, JSON.stringify({msg, metadata}, null, ' '));
+});
+
+bot.on('callback_query', function onCallbackQuery(callbackQuery) {
+    const action = callbackQuery.data;
+    const msg = callbackQuery.message;
+    const opts = {
+        chat_id: msg.chat.id,
+        message_id: msg.message_id,
+    };
+    let text;
+
+    if (action === '1') {
+        text = 'You hit button 1';
+    }
+
+    bot.sendMessage(msg.chat.id, JSON.stringify({msg, action}, null, ' '));
 });
