@@ -35,7 +35,7 @@ bot.on('message', (msg, metadata) => {
             });
             break;
         default:
-            bot.sendMessage(chatId, 'Лучше попробуй команду /start \n\n\n' + JSON.stringify({msg, metadata}, null, ' '));
+            bot.sendMessage(chatId, 'Лучше попробуй команду /start \n---\n\n' + JSON.stringify({msg, metadata}, null, ' '));
     }
 
     // send a message to the chat acknowledging receipt of their message
