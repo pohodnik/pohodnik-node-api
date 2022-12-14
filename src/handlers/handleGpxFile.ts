@@ -6,7 +6,7 @@ const { SportsLib } = require('@sports-alliance/sports-lib');
 export const handleGPXStream = async (stream: ReadableStream): Promise<string> => {
     const trackDataRaw = [];
     const metaDataRaw = [];
-    const gpxString = stream.toString();
+    const gpxString = await new Response(stream).text().toString();
     const event = await SportsLib.importFromGPX(gpxString, DOMParser);
     const stats = event.getStats();
     const dom = await new DOMParser().parseFromString(gpxString, 'application/xml');
