@@ -33,6 +33,7 @@ bot.on('message', (msg, metadata) => {
                     ]
                 }
             });
+            break;
         default:
             bot.sendMessage(chatId, 'Лучше попробуй команду /start \n\n\n' + JSON.stringify({msg, metadata}, null, ' '));
     }
@@ -53,9 +54,11 @@ bot.on('callback_query', function onCallbackQuery(callbackQuery) {
     switch (action) {
         case StartAnswers.Login:
             bot.sendMessage(msg.chat.id, "Пока не готово... 😎, но можно просто на сейте залогиниться, если очень хочется https://pohodnik.tk/login ");
+            break;
         case StartAnswers.WhenHike:
             bot.sendMessage(msg.chat.id, "Скоро 😊");
+            break;
         default:
-            // bot.sendMessage(msg.chat.id, JSON.stringify({msg, action}, null, ' '));
+            bot.sendMessage(msg.chat.id, JSON.stringify({msg, action}, null, ' '));
     }
 });
