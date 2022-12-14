@@ -20,7 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c466f5f8-7170-4227-a1a5-5cf798414fd9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/handlers/handleGpxFile.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helpers/gpsHelper.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bot.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/bot.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +63,7 @@
       <recent name="C:\git\pohodnik-node-api\src\enums" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\git\pohodnik-node-api\src\helpers" />
       <recent name="C:\git\pohodnik-node-api" />
       <recent name="C:\git\pohodnik-node-api\docker" />
     </key>
@@ -101,7 +108,7 @@
       <option name="presentableId" value="Default" />
       <updated>1633812687303</updated>
       <workItem from="1633812689452" duration="4322000" />
-      <workItem from="1670098741665" duration="15639000" />
+      <workItem from="1670098741665" duration="17450000" />
     </task>
     <task id="LOCAL-00001" summary="pohbot">
       <created>1670956116028</created>
@@ -271,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671045630658</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="test btns  2">
+      <created>1671045992957</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1671045992957</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,9 +332,9 @@
       <screen x="0" y="0" width="1920" height="1019" />
     </state>
     <state width="1899" height="194" key="GridCell.Tab.0.right/1920.-3.1920.1019/0.0.1920.1019@0.0.1920.1019" timestamp="1671045796863" />
-    <state x="552" y="229" key="Vcs.Push.Dialog.v2" timestamp="1671045669729">
+    <state x="552" y="229" key="Vcs.Push.Dialog.v2" timestamp="1671046090161">
       <screen x="0" y="0" width="1920" height="1019" />
     </state>
-    <state x="552" y="229" key="Vcs.Push.Dialog.v2/1920.-3.1920.1019/0.0.1920.1019@0.0.1920.1019" timestamp="1671045669729" />
+    <state x="552" y="229" key="Vcs.Push.Dialog.v2/1920.-3.1920.1019/0.0.1920.1019@0.0.1920.1019" timestamp="1671046090161" />
   </component>
 </project>

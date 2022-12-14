@@ -1,5 +1,6 @@
 import {Commands} from "./enums/Commands";
 import {StartAnswers} from "./enums/StartAnswers";
+import {handleGPXStream} from "./handlers/handleGpxFile";
 
 const TelegramBot = require('node-telegram-bot-api');
 require('dotenv').config();
@@ -14,8 +15,16 @@ bot.onText(/\/echo (.+)/, (msg, match) => {
      bot.sendMessage(chatId, resp);
 });
 
-bot.on('message', (msg, metadata) => {
+bot.on('message', async (msg, metadata) => {
     const chatId = msg.chat.id;
+
+    if (metadata.type === 'document' && msg.document.mime_type ===  "application/gpx+xml") {
+        const stream = await bot.getFileStream(msg.document.file_id);
+        const str = await handleGPXStream(stream);
+        await bot.sendMessage(chatId, str);
+
+        return;
+    }
 
     switch (msg.text) {
         case Commands.Start:
