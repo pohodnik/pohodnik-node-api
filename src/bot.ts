@@ -59,6 +59,6 @@ bot.on('callback_query', function onCallbackQuery(callbackQuery) {
             bot.sendMessage(msg.chat.id, "Скоро 😊");
             break;
         default:
-            bot.sendMessage(msg.chat.id, JSON.stringify({msg, action}, null, ' '));
+            // bot.sendMessage(msg.chat.id, JSON.stringify({msg, action}, null, ' '));
     }
 });
