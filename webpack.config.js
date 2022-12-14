@@ -2,9 +2,9 @@ const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-    entry: './src/bot.js',
+    entry: './src/bot.ts',
     output: {
-        filename: 'bot.js',
+        filename: 'bot.ts',
         path: path.resolve(__dirname, 'dist'),
     },
     target: 'node12.18',

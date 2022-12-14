@@ -20,7 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c466f5f8-7170-4227-a1a5-5cf798414fd9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/enums/Commands.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/enums/StartAnswers.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/bot.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +39,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -46,17 +55,21 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/enums" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\git\pohodnik-node-api\src\enums" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\git\pohodnik-node-api" />
       <recent name="C:\git\pohodnik-node-api\docker" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.start">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -67,8 +80,19 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start" />
         <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
@@ -85,7 +109,7 @@
       <option name="presentableId" value="Default" />
       <updated>1633812687303</updated>
       <workItem from="1633812689452" duration="4322000" />
-      <workItem from="1670098741665" duration="11870000" />
+      <workItem from="1670098741665" duration="12946000" />
     </task>
     <task id="LOCAL-00001" summary="pohbot">
       <created>1670956116028</created>
@@ -192,7 +216,21 @@
       <option name="project" value="LOCAL" />
       <updated>1671041501514</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="test btns">
+      <created>1671041770548</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1671041770548</updated>
+    </task>
+    <task id="LOCAL-00017" summary="test btns  2">
+      <created>1671041855227</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1671041855227</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,32 +253,33 @@
     <MESSAGE value="deploy try 2" />
     <MESSAGE value="it works and deploy" />
     <MESSAGE value="test btns" />
-    <option name="LAST_COMMIT_MESSAGE" value="test btns" />
+    <MESSAGE value="test btns  2" />
+    <option name="LAST_COMMIT_MESSAGE" value="test btns  2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="708" y="311" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1670955979370">
       <screen x="0" y="0" width="1920" height="1019" />
     </state>
     <state x="708" y="311" key="#com.intellij.fileTypes.FileTypeChooser/1920.-3.1920.1019/0.0.1920.1019@0.0.1920.1019" timestamp="1670955979370" />
-    <state width="1899" height="416" key="GridCell.Tab.0.bottom" timestamp="1670954365559">
+    <state width="1899" height="416" key="GridCell.Tab.0.bottom" timestamp="1671042209589">
       <screen x="0" y="0" width="1920" height="1019" />
     </state>
-    <state width="1899" height="416" key="GridCell.Tab.0.bottom/1920.-3.1920.1019/0.0.1920.1019@0.0.1920.1019" timestamp="1670954365559" />
-    <state width="1899" height="416" key="GridCell.Tab.0.center" timestamp="1670954365559">
+    <state width="1899" height="416" key="GridCell.Tab.0.bottom/1920.-3.1920.1019/0.0.1920.1019@0.0.1920.1019" timestamp="1671042209589" />
+    <state width="1899" height="416" key="GridCell.Tab.0.center" timestamp="1671042209589">
       <screen x="0" y="0" width="1920" height="1019" />
     </state>
-    <state width="1899" height="416" key="GridCell.Tab.0.center/1920.-3.1920.1019/0.0.1920.1019@0.0.1920.1019" timestamp="1670954365559" />
-    <state width="1899" height="416" key="GridCell.Tab.0.left" timestamp="1670954365558">
+    <state width="1899" height="416" key="GridCell.Tab.0.center/1920.-3.1920.1019/0.0.1920.1019@0.0.1920.1019" timestamp="1671042209589" />
+    <state width="1899" height="416" key="GridCell.Tab.0.left" timestamp="1671042209589">
       <screen x="0" y="0" width="1920" height="1019" />
     </state>
-    <state width="1899" height="416" key="GridCell.Tab.0.left/1920.-3.1920.1019/0.0.1920.1019@0.0.1920.1019" timestamp="1670954365558" />
-    <state width="1899" height="416" key="GridCell.Tab.0.right" timestamp="1670954365559">
+    <state width="1899" height="416" key="GridCell.Tab.0.left/1920.-3.1920.1019/0.0.1920.1019@0.0.1920.1019" timestamp="1671042209589" />
+    <state width="1899" height="416" key="GridCell.Tab.0.right" timestamp="1671042209589">
       <screen x="0" y="0" width="1920" height="1019" />
     </state>
-    <state width="1899" height="416" key="GridCell.Tab.0.right/1920.-3.1920.1019/0.0.1920.1019@0.0.1920.1019" timestamp="1670954365559" />
-    <state x="552" y="229" key="Vcs.Push.Dialog.v2" timestamp="1671041505921">
+    <state width="1899" height="416" key="GridCell.Tab.0.right/1920.-3.1920.1019/0.0.1920.1019@0.0.1920.1019" timestamp="1671042209589" />
+    <state x="552" y="229" key="Vcs.Push.Dialog.v2" timestamp="1671041871958">
       <screen x="0" y="0" width="1920" height="1019" />
     </state>
-    <state x="552" y="229" key="Vcs.Push.Dialog.v2/1920.-3.1920.1019/0.0.1920.1019@0.0.1920.1019" timestamp="1671041505921" />
+    <state x="552" y="229" key="Vcs.Push.Dialog.v2/1920.-3.1920.1019/0.0.1920.1019@0.0.1920.1019" timestamp="1671041871958" />
   </component>
 </project>
