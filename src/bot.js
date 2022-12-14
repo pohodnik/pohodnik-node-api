@@ -22,9 +22,9 @@ bot.onText(/\/echo (.+)/, (msg, match) => {
 
 // Listen for any kind of message. There are different kinds of
 // messages.
-bot.on('message', (msg) => {
+bot.on('message', (msg, metadata) => {
     const chatId = msg.chat.id;
 
     // send a message to the chat acknowledging receipt of their message
-    bot.sendMessage(chatId, JSON.stringify(msg, null, ' '));
+    bot.sendMessage(chatId, JSON.stringify({msg, metadata}, null, ' '));
 });
