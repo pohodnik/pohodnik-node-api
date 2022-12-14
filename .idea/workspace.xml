@@ -86,7 +86,7 @@
       <option name="presentableId" value="Default" />
       <updated>1633812687303</updated>
       <workItem from="1633812689452" duration="4322000" />
-      <workItem from="1670098741665" duration="9624000" />
+      <workItem from="1670098741665" duration="9921000" />
     </task>
     <task id="LOCAL-00001" summary="pohbot">
       <created>1670956116028</created>
@@ -137,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671039082712</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="deploy try 2">
+      <created>1671039507562</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1671039507562</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,7 +164,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="pohbot" />
     <MESSAGE value="deploy try 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="deploy try 1" />
+    <MESSAGE value="deploy try 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="deploy try 2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="708" y="311" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1670955979370">
@@ -180,9 +188,9 @@
       <screen x="0" y="0" width="1920" height="1019" />
     </state>
     <state width="1899" height="416" key="GridCell.Tab.0.right/1920.-3.1920.1019/0.0.1920.1019@0.0.1920.1019" timestamp="1670954365559" />
-    <state x="552" y="229" key="Vcs.Push.Dialog.v2" timestamp="1671039083935">
+    <state x="552" y="229" key="Vcs.Push.Dialog.v2" timestamp="1671039508865">
       <screen x="0" y="0" width="1920" height="1019" />
     </state>
-    <state x="552" y="229" key="Vcs.Push.Dialog.v2/1920.-3.1920.1019/0.0.1920.1019@0.0.1920.1019" timestamp="1671039083935" />
+    <state x="552" y="229" key="Vcs.Push.Dialog.v2/1920.-3.1920.1019/0.0.1920.1019@0.0.1920.1019" timestamp="1671039508865" />
   </component>
 </project>
