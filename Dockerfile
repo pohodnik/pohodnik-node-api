@@ -13,7 +13,7 @@ RUN npm install
 # RUN npm ci --only=production
 
 # копируем исходный код
-COPY .. .
+COPY . .
 
 EXPOSE 80
 CMD [ "npm", "start" ]
