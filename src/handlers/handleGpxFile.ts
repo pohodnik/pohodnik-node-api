@@ -3,7 +3,7 @@ import {encodePolyline, getSQLDate} from "../helpers/gpsHelper";
 const { DOMParser } = require('xmldom')
 const { SportsLib } = require('@sports-alliance/sports-lib');
 
-export const handleGPXStream = async (gpxString: string): Promise<string> => {
+export const handleGPXStream = async (gpxString: string, name = '', description = ''): Promise<string> => {
     const trackDataRaw = [];
     const metaDataRaw = [];
 
@@ -55,6 +55,7 @@ export const handleGPXStream = async (gpxString: string): Promise<string> => {
 
     const forBackendData = {
         name,
+        description,
         workout_type: 1,
         trackdata: encodePolyline(trackData.trackDataRaw),
         trackmeta: encodePolyline(trackData.metaDataRaw),

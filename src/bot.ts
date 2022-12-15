@@ -27,7 +27,7 @@ bot.on('message', async (msg, metadata) => {
         });
 
         stream.on('end',async function(){
-            const str = await handleGPXStream(string);
+            const str = await handleGPXStream(string, msg.caption || msg.text, msg.document.file_name);
             await bot.sendMessage(chatId, str);
         });
 
