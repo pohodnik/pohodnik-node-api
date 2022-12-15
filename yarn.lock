@@ -132,6 +132,14 @@
   "resolved" "https://registry.npmjs.org/@types/node/-/node-16.10.3.tgz"
   "version" "16.10.3"
 
+"@types/readable-stream@^2.3.15":
+  "integrity" "sha512-oM5JSKQCcICF1wvGgmecmHldZ48OZamtMxcGGVICOJA8o8cahXC1zEVAif8iwoc5j8etxFaRFnf095+CDsuoFQ=="
+  "resolved" "https://registry.npmjs.org/@types/readable-stream/-/readable-stream-2.3.15.tgz"
+  "version" "2.3.15"
+  dependencies:
+    "@types/node" "*"
+    "safe-buffer" "~5.1.1"
+
 "@types/request@*":
   "integrity" "sha512-whjk1EDJPcAR2kYHRbFl/lKeeKYTi05A15K9bnLInCVroNDCtXce57xKdI0/rQaA3K+6q0eFyUBPmqfSndUZdQ=="
   "resolved" "https://registry.npmjs.org/@types/request/-/request-2.48.8.tgz"

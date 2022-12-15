@@ -20,8 +20,18 @@ bot.on('message', async (msg, metadata) => {
 
     if (metadata.type === 'document' && msg.document.mime_type ===  "application/gpx+xml") {
         const stream = await bot.getFileStream(msg.document.file_id);
-        const str = await handleGPXStream(stream);
-        await bot.sendMessage(chatId, str);
+
+        let string = '';
+        stream.on('data',function(data){
+            string += data.toString();
+        });
+
+        stream.on('end',async function(){
+            const str = await handleGPXStream(string);
+            await bot.sendMessage(chatId, str);
+        });
+
+
 
         return;
     }

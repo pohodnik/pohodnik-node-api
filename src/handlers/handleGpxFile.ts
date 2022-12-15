@@ -3,21 +3,10 @@ import {encodePolyline, getSQLDate} from "../helpers/gpsHelper";
 const { DOMParser } = require('xmldom')
 const { SportsLib } = require('@sports-alliance/sports-lib');
 
-async function streamToString(stream) {
-    // lets have a ReadableStream as a stream variable
-    const chunks = [];
-
-    for await (const chunk of stream) {
-        chunks.push(Buffer.from(chunk));
-    }
-
-    return Buffer.concat(chunks).toString("utf-8");
-}
-
-export const handleGPXStream = async (stream: ReadableStream): Promise<string> => {
+export const handleGPXStream = async (gpxString: string): Promise<string> => {
     const trackDataRaw = [];
     const metaDataRaw = [];
-    const gpxString = streamToString(stream).toString();
+
     const event = await SportsLib.importFromGPX(gpxString, DOMParser);
     const stats = event.getStats();
     const dom = await new DOMParser().parseFromString(gpxString, 'application/xml');
